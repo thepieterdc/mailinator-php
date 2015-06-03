@@ -12,47 +12,41 @@ class Mailinator
 	
 	private function call($method, $params)
 	{
-		$params['token'] = $this->token;
-		$params_str = $this->paramsToString($params);
-		$url = $this->apiEndpoint.$method."?".$params_str;
-		$ch = curl_init($url);
+		$ch = curl_init();
+
+		curl_setopt($ch, CURLOPT_URL, $this->apiEndpoint . $method);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, array_merge($params, array('token' => $this->token)));
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
 		$exec = curl_exec($ch);
 		$info = curl_getinfo($ch);
+		curl_close($ch);
+		
 		if($info["http_code"] == 200)
 		{
-			curl_close($ch);
-			return json_decode($exec,true);
+			return json_decode($exec, true);
 		}
 		else
 		{
-			die("An error happened");
+			throw new Exception('There was an error contacting the mailinator API endpoint.')
 		}
-	}
-	
-	private function paramsToString($params = array())
-	{
-		$str = "";
-		foreach($params as $key=>$val)
-		{
-			$str .= $key."=".$val."&";
-		}
-		return rtrim($str, "&");
 	}
 	
 	public function fetchInbox($inbox)
 	{
-		$query = $this->call('inbox',array('to' => $inbox));
-		$mailbox = $query["messages"];
-		$this->inboxCount = count($mailbox);
-		return $mailbox;
+		$query = $this->call('inbox', array('to' => $inbox));
+		$this->inboxCount = count($query["messages"]);
+		return $query["messages"];
 	}
 	
 	public function fetchMail($msgId)
 	{
-		$query = $this->call('email',array('id' => $msgId));
+		$query = $this->call('email', array('id' => $msgId));
 		$message = $query["data"];
 		var_dump($message);
 	}
