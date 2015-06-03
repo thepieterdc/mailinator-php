@@ -40,6 +40,12 @@ class Mailinator
 	public function fetchInbox($inbox)
 	{
 		$query = $this->call('inbox', array('to' => $inbox));
+
+		if(!isset($query["messages"]))
+		{
+			throw new Exception('Missing messages data in response from mailinator API').
+		}
+
 		$this->inboxCount = count($query["messages"]);
 		return $query["messages"];
 	}
@@ -47,8 +53,13 @@ class Mailinator
 	public function fetchMail($msgId)
 	{
 		$query = $this->call('email', array('id' => $msgId));
-		$message = $query["data"];
-		var_dump($message);
+
+		if(!isset($query["data"]))
+		{
+			throw new Exception('Missing data in response from mailinator API').
+		}
+
+		return $query["data"];
 	}
 }
 
