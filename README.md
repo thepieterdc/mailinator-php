@@ -16,10 +16,22 @@ require 'Mailinator.php';
 $mailinator = new Mailinator('my_token');
 
 //Get messages in inbox//
-print_r($mailinator->fetchInbox('randominbox'));
+try
+{
+  print_r($mailinator->fetchInbox('randominbox')); 
+} catch(Exception $e) {
+  // Process the error
+  echo "Something went wrong: " . $e->getMessage();
+}
 
 //Get the id by running fetchInbox() first//
-print_r($mailinator->fetchMail('mail-id'));
+try
+{
+  print_r($mailinator->fetchMail('mail-id'));
+} catch(Exception $e) {
+  // Process the error
+  echo "Something went wrong: " . $e->getMessage();
+}
 ```
 
 ## License
