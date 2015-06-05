@@ -1,50 +1,65 @@
 <?php
-class Mailinator {
+class Mailinator
+{
 	private $token;
 	private $apiEndpoint = "https://api.mailinator.com/api/";
 	private $inboxCount = 0;
 	
-	public function __construct($token) {
+	public function __construct($token)
+	{
 		$this->token = $token;
 	}
 	
-	private function call($method,$params) {
-		$params['token'] = $this->token;
-		$params_str = $this->paramsToString($params);
-		$url = $this->apiEndpoint.$method."?".$params_str;
-		$ch = curl_init($url);
+	private function call($method, $params)
+	{
+		$ch = curl_init();
+
+		curl_setopt($ch, CURLOPT_URL, $this->apiEndpoint . $method);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, array_merge($params, array('token' => $this->token)));
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
 		$exec = curl_exec($ch);
 		$info = curl_getinfo($ch);
-		if($info["http_code"] == 200) {
-			curl_close($ch);
-			return json_decode($exec,true);
-		} else {
-			die("An error happened");
+		curl_close($ch);
+		
+		if($info["http_code"] == 200)
+		{
+			return json_decode($exec, true);
+		}
+		else
+		{
+			throw new Exception('There was an error contacting the mailinator API endpoint.')
 		}
 	}
 	
-	private function paramsToString($params = array()) {
-		$str = "";
-		foreach($params as $key=>$val) {
-			$str .= $key."=".$val."&";
+	public function fetchInbox($inbox)
+	{
+		$query = $this->call('inbox', array('to' => $inbox));
+
+		if(!isset($query["messages"]))
+		{
+			throw new Exception('Missing messages data in response from mailinator API').
 		}
-		return rtrim($str, "&");
+
+		$this->inboxCount = count($query["messages"]);
+		return $query["messages"];
 	}
 	
-	public function fetchInbox($inbox) {
-		$query = $this->call('inbox',array('to' => $inbox));
-		$mailbox = $query["messages"];
-		$this->inboxCount = count($mailbox);
-		return $mailbox;
-	}
-	
-	public function fetchMail($msgId) {
-		$query = $this->call('email',array('id' => $msgId));
-		$message = $query["data"];
-		var_dump($message);
+	public function fetchMail($msgId)
+	{
+		$query = $this->call('email', array('id' => $msgId));
+
+		if(!isset($query["data"]))
+		{
+			throw new Exception('Missing data in response from mailinator API').
+		}
+
+		return $query["data"];
 	}
 }
 
