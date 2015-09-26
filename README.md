@@ -12,22 +12,31 @@ You need to have the [cURL](http://php.net/manual/en/book.curl.php)-extension in
 
 ## Usage
 ``` php
-require 'Mailinator.php';
+require_once 'src/Mailinator/Mailinator.php';
 $mailinator = new Mailinator('my_token');
 
 //Get messages in inbox//
 try
 {
-  print_r($mailinator->fetchInbox('randominbox')); 
+  print_r($mailinator->inbox('randominbox')); 
 } catch(Exception $e) {
   // Process the error
   echo "Something went wrong: " . $e->getMessage();
 }
 
-//Get the id by running fetchInbox() first//
+//Get a message//
 try
 {
-  print_r($mailinator->fetchMail('mail-id'));
+  print_r($mailinator->message('mail-id'));
+} catch(Exception $e) {
+  // Process the error
+  echo "Something went wrong: " . $e->getMessage();
+}
+
+//Delete a message//
+try
+{
+  print_r($mailinator->delete('mail-id'));
 } catch(Exception $e) {
   // Process the error
   echo "Something went wrong: " . $e->getMessage();
