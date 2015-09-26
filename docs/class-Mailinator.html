@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Mailinator</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Packages</h3>
+			<ul>
+				<li>
+					<a href="package-Mailinator.html">
+						Mailinator					</a>
+
+						</li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Inbox.html">Inbox</a></li>
+				<li class="active"><a href="class-Mailinator.html">Mailinator</a></li>
+				<li><a href="class-Message.html">Message</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+<span>Package</span>			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Mailinator</h1>
+
+
+	<div class="description">
+	<p>Mailinator API interface</p>
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		<b>Package:</b> <a href="package-Mailinator.html">Mailinator</a><br>
+
+				<b>License:</b>
+				<a href="http://opensource.org/licenses/MIT">http://opensource.org/licenses/MIT</a><br>
+				<b>Author:</b>
+				Pieter De Clercq <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x70;&#105;&#101;&#116;&#101;&#114;&#100;&#101;&#99;&#108;&#101;r&#x63;&#x71;&#x40;&#x6f;&#x75;&#x74;&#x6c;&#x6f;&#x6f;&#107;&#46;&#99;&#111;&#109;">&#x70;&#105;&#101;&#116;&#101;&#114;&#100;&#101;&#99;&#108;&#101;r&#x63;&#x71;&#x40;&#x6f;&#x75;&#x74;&#x6c;&#x6f;&#x6f;&#107;&#46;&#99;&#111;&#109;</a><br>
+				<b>Author:</b>
+				Muntean Doru <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#109;&#117;&#110;&#116;&#101;&#97;&#110;&#100;o&#x72;&#x75;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#46;&#99;&#111;&#109;">&#109;&#117;&#110;&#116;&#101;&#97;&#110;&#100;o&#x72;&#x75;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#46;&#99;&#111;&#109;</a><br>
+				<b>Since:</b>
+				2015-06-20<br>
+			<b>Located at</b> <a href="source-class-Mailinator.html#3-106" title="Go to source code">Mailinator/Mailinator.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Mailinator.html#18-25" title="Go to source code">__construct</a>( <span>string <var>$token</var></span> )</code>
+
+		<div class="description short">
+			<p>Constructs a new Mailinator instance.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Constructs a new Mailinator instance.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$token</var></dt>
+					<dd>The user's token, used to authenticate with the Mailinator API. Can be obtained by creating a free account at http://www.mailinator.com/</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="inbox" id="_inbox">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Inbox.html">Inbox</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_inbox">#</a>
+		<code><a href="source-class-Mailinator.html#57-71" title="Go to source code">inbox</a>( <span>string <var>$inbox</var></span> )</code>
+
+		<div class="description short">
+			<p>Gets the messages for a specified inbox.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Gets the messages for a specified inbox.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$inbox</var></dt>
+					<dd>The e-mailaddress to query</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Inbox.html">Inbox</a></code><br>The inbox
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					Exception<br>Any errors encountered
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="message" id="_message">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Message.html">Message</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_message">#</a>
+		<code><a href="source-class-Mailinator.html#73-88" title="Go to source code">message</a>( <span>string <var>$msgId</var></span> )</code>
+
+		<div class="description short">
+			<p>Gets the message details for the specified message id.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Gets the message details for the specified message id.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$msgId</var></dt>
+					<dd>The id of the message</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Message.html">Message</a></code><br>the message
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					Exception<br>Any errors encountered
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="delete" id="_delete">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_delete">#</a>
+		<code><a href="source-class-Mailinator.html#90-105" title="Go to source code">delete</a>( <span>string <var>$msgId</var></span> )</code>
+
+		<div class="description short">
+			<p>Deletes a specified message from the inbox</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Deletes a specified message from the inbox</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$msgId</var></dt>
+					<dd>The id of the message to delete</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean<br>true if the message was deleted
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					Exception<br>Any errors encountered
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

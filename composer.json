@@ -1,0 +1,15 @@
+{
+  "name": "thepieterdc/mailinator_php",
+  "description": "PHP wrapper for the Mailinator.com API",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "require": {
+    "php": ">=5.2.1",
+  },
+  "authors": [
+    {
+      "name": "Pieter De Clercq",
+      "email": "pieterdeclercq@outlook.com"
+    }
+  ]
+}

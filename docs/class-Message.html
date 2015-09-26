@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Message</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Packages</h3>
+			<ul>
+				<li>
+					<a href="package-Mailinator.html">
+						Mailinator					</a>
+
+						</li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Inbox.html">Inbox</a></li>
+				<li><a href="class-Mailinator.html">Mailinator</a></li>
+				<li class="active"><a href="class-Message.html">Message</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+<span>Package</span>			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Message</h1>
+
+
+	<div class="description">
+	<p>Mailinator Message</p>
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		<b>Package:</b> <a href="package-Mailinator.html">Mailinator</a><br>
+
+				<b>License:</b>
+				<a href="http://opensource.org/licenses/MIT">http://opensource.org/licenses/MIT</a><br>
+				<b>Author:</b>
+				Pieter De Clercq <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x70;&#105;&#101;&#116;&#101;&#114;&#100;&#101;&#99;&#108;&#101;r&#x63;&#x71;&#x40;&#x6f;&#x75;&#x74;&#x6c;&#x6f;&#x6f;&#107;&#46;&#99;&#111;&#109;">&#x70;&#105;&#101;&#116;&#101;&#114;&#100;&#101;&#99;&#108;&#101;r&#x63;&#x71;&#x40;&#x6f;&#x75;&#x74;&#x6c;&#x6f;&#x6f;&#107;&#46;&#99;&#111;&#109;</a><br>
+				<b>Since:</b>
+				2015-09-26<br>
+			<b>Located at</b> <a href="source-class-Message.html#149-280" title="Go to source code">Mailinator/Mailinator.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Message.html#168-188" title="Go to source code">__construct</a>( <span>array <var>$msgData</var></span> )</code>
+
+		<div class="description short">
+			<p>Constructs a new message.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Constructs a new message.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$msgData</var></dt>
+					<dd>$returnData The data received from a call to the Mailinator API</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="body" id="_body">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_body">#</a>
+		<code><a href="source-class-Message.html#190-198" title="Go to source code">body</a>( )</code>
+
+		<div class="description short">
+			<p>Returns the contents of this message.
+<b>This is only available if the message has been constructed from a call to Mailinator->message()</b></p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns the contents of this message.
+<b>This is only available if the message has been constructed from a call to Mailinator->message()</b></p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string<br>The message contents
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="fromEmail" id="_fromEmail">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_fromEmail">#</a>
+		<code><a href="source-class-Message.html#200-207" title="Go to source code">fromEmail</a>( )</code>
+
+		<div class="description short">
+			<p>Returns the sender's email.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns the sender's email.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string<br>The sender's email
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="fromName" id="_fromName">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_fromName">#</a>
+		<code><a href="source-class-Message.html#209-216" title="Go to source code">fromName</a>( )</code>
+
+		<div class="description short">
+			<p>Returns the name of the sender.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns the name of the sender.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string<br>The sender's name
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="headers" id="_headers">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_headers">#</a>
+		<code><a href="source-class-Message.html#217-225" title="Go to source code">headers</a>( )</code>
+
+		<div class="description short">
+			<p>Returns the headers of this message.
+<b>This is only available if the message has been constructed from a call to Mailinator->message()</b></p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns the headers of this message.
+<b>This is only available if the message has been constructed from a call to Mailinator->message()</b></p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>The message headers
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="id" id="_id">
+
+		<td class="attributes"><code>
+			 public 
+
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_id">#</a>
+		<code><a href="source-class-Message.html#227-234" title="Go to source code">id</a>( )</code>
+
+		<div class="description short">
+			<p>Returns the id of this message.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns the id of this message.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					integer<br>The message id
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="ip" id="_ip">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_ip">#</a>
+		<code><a href="source-class-Message.html#236-243" title="Go to source code">ip</a>( )</code>
+
+		<div class="description short">
+			<p>Returns the IP address of the mailserver this message is originating from.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns the IP address of the mailserver this message is originating from.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string<br>The mailserver's IP address
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="read" id="_read">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_read">#</a>
+		<code><a href="source-class-Message.html#245-252" title="Go to source code">read</a>( )</code>
+
+		<div class="description short">
+			<p>Returns wether or not this message has been read.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns wether or not this message has been read.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean<br>true if this message has been read
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="subject" id="_subject">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_subject">#</a>
+		<code><a href="source-class-Message.html#254-261" title="Go to source code">subject</a>( )</code>
+
+		<div class="description short">
+			<p>Returns the subject of this message.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns the subject of this message.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string<br>The subject of this message
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="time" id="_time">
+
+		<td class="attributes"><code>
+			 public 
+
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_time">#</a>
+		<code><a href="source-class-Message.html#263-270" title="Go to source code">time</a>( )</code>
+
+		<div class="description short">
+			<p>Returns the time this message was sent.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns the time this message was sent.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					integer<br>The time this message was sent, in seconds since 01/01/1970
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="to" id="_to">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_to">#</a>
+		<code><a href="source-class-Message.html#272-279" title="Go to source code">to</a>( )</code>
+
+		<div class="description short">
+			<p>Returns the name of the receiver of this message.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns the name of the receiver of this message.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string<br>The name of the receiver of this message
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>
