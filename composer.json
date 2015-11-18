@@ -1,15 +1,20 @@
 {
-  "name": "thepieterdc/mailinator_php",
-  "description": "PHP wrapper for the Mailinator.com API",
-  "minimum-stability": "stable",
-  "license": "MIT",
-  "require": {
-    "php": ">=5.2.1",
-  },
-  "authors": [
-    {
-      "name": "Pieter De Clercq",
-      "email": "pieterdeclercq@outlook.com"
+    "name": "thepieterdc/mailinator_php",
+    "description": "PHP wrapper for the Mailinator.com API",
+    "minimum-stability": "stable",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pieter De Clercq",
+            "email": "pieterdeclercq@outlook.com"
+        },
+        {
+            "name": "Muntean Doru",
+            "email": "munteandoru@gmail.com"
+        }
+    ],
+    "require": {
+      "php": ">=5.2.1",
     }
-  ]
 }

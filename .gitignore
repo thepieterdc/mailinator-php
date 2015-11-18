@@ -31,3 +31,5 @@
 ## File-based project format:
 *.ipr
 *.iws
+
+/vendor/
