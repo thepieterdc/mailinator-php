@@ -16,5 +16,10 @@
     ],
     "require": {
       "php": ">=5.2.1"
+    },
+    "autoload": {
+      "psr-0": {
+        "Mailinator": "src/"
+      }
     }
 }
