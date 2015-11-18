@@ -1,7 +1,6 @@
 {
     "name": "thepieterdc/mailinator_php",
     "description": "PHP wrapper for the Mailinator.com API",
-    "minimum-stability": "stable",
     "type": "library",
     "license": "MIT",
     "authors": [
