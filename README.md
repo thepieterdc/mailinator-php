@@ -1,6 +1,7 @@
 # mailinator_php
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://github.com/brnlbs/mailinator/blob/master/LICENSE)
+[(https://packagist.org/packages/thepieterdc/mailinator_php)](https://img.shields.io/packagist/dm/thepieterdc/mailinator_php.svg)[(https://packagist.org/packages/thepieterdc/mailinator_php)](https://img.shields.io/packagist/dd/thepieterdc/mailinator_php.svg)[(https://packagist.org/packages/thepieterdc/mailinator_php)](https://img.shields.io/packagist/dt/thepieterdc/mailinator_php.svg)
 
 PHP wrapper for the Mailinator.com API
 
@@ -18,7 +19,7 @@ $mailinator = new Mailinator('my_token');
 //Get messages in inbox//
 try
 {
-  print_r($mailinator->inbox('randominbox')); 
+  print_r($mailinator->inbox('randominbox'));
 } catch(Exception $e) {
   // Process the error
   echo "Something went wrong: " . $e->getMessage();
