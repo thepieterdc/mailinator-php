@@ -1,7 +1,7 @@
 # mailinator_php
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://github.com/brnlbs/mailinator/blob/master/LICENSE)
-[![Monthly downloads](https://packagist.org/packages/thepieterdc/mailinator_php)](https://img.shields.io/packagist/dm/thepieterdc/mailinator_php.svg)[![Daily downloads](https://packagist.org/packages/thepieterdc/mailinator_php)](https://img.shields.io/packagist/dd/thepieterdc/mailinator_php.svg)[![Total downloads](https://packagist.org/packages/thepieterdc/mailinator_php)](https://img.shields.io/packagist/dt/thepieterdc/mailinator_php.svg)
+[![Monthly downloads](https://img.shields.io/packagist/dm/thepieterdc/mailinator_php.svg)](https://packagist.org/packages/thepieterdc/mailinator_php)[![Daily downloads](https://img.shields.io/packagist/dd/thepieterdc/mailinator_php.svg)](https://packagist.org/packages/thepieterdc/mailinator_php)[![Total downloads](https://img.shields.io/packagist/dt/thepieterdc/mailinator_php.svg)](https://packagist.org/packages/thepieterdc/mailinator_php)
 
 PHP wrapper for the Mailinator.com API
 
