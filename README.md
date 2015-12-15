@@ -46,4 +46,4 @@ try
 
 ## License
 
-The MIT License (MIT). Please see [License File](https://github.com/thepieterdc/mailinator_php/blob/master/LICENSE) for more information.
+The MIT License (MIT). Please see [License File](https://github.com/thepieterdc/mailinator_php/blob/master/LICENSE.txt) for more information.
