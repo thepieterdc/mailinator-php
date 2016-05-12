@@ -1,6 +1,5 @@
 {
     "name": "oyepez003/mailinator_php",
-    "version": "1.0.0",
     "description": "PHP wrapper for the Mailinator.com API",
     "type": "library",
     "license": "MIT",
