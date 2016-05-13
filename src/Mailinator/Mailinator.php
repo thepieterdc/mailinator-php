@@ -30,7 +30,7 @@ class Mailinator {
 	 * @param string $method The method to call
 	 * @param array $params The parameters to send
 	 * @return array The JSON decoded response from the Mailinator API
-	 * @throws Exception Any errors encountered
+	 * @throws \Exception Any errors encountered
 	 */
 	private function call($method, $params)	{
 		$ch = curl_init();
@@ -50,7 +50,7 @@ class Mailinator {
 		if($info["http_code"] == 200) {
 			return json_decode($exec, true);
 		} else {
-			throw new Exception('There was an error contacting the Mailinator API endpoint.');
+			throw new \Exception('There was an error contacting the Mailinator API endpoint.');
 		}
 	}
 
@@ -59,13 +59,13 @@ class Mailinator {
 	 *
 	 * @param string $inbox The e-mailaddress to query
 	 * @return Inbox The inbox
-	 * @throws Exception Any errors encountered
+	 * @throws \Exception Any errors encountered
 	 */
 	public function inbox($inbox) {
 		$query = $this->call('inbox', array('to' => $inbox));
 
 		if(!isset($query["messages"])) {
-			throw new Exception('Missing messages data in response from Mailinator API.');
+			throw new \Exception('Missing messages data in response from Mailinator API.');
 		}
 		return new Inbox($query["messages"]);
 	}
@@ -75,13 +75,13 @@ class Mailinator {
 	 *
 	 * @param string $msgId The id of the message
 	 * @return Message the message
-	 * @throws Exception Any errors encountered
+	 * @throws \Exception Any errors encountered
 	 */
 	public function message($msgId) {
 		$query = $this->call('email', array('id' => $msgId));
 
 		if(!isset($query["data"])) {
-			throw new Exception('Missing data in response from Mailinator API.');
+			throw new \Exception('Missing data in response from Mailinator API.');
 		}
 
 		return new Message($query["data"]);
@@ -92,13 +92,13 @@ class Mailinator {
 	 *
 	 * @param string $msgId The id of the message to delete
 	 * @return bool true if the message was deleted
-	 * @throws Exception Any errors encountered
+	 * @throws \Exception Any errors encountered
 	 */
 	public function delete($msgId) {
 		$query = $this->call('delete', array('id' => $msgId));
 
 		if(!isset($query["status"])) {
-			throw new Exception("Missing result in response from Mailinator API.");
+			throw new \Exception("Missing result in response from Mailinator API.");
 		}
 
 		return $query["status"] == "ok";
@@ -164,6 +164,7 @@ class Message {
 	private $subject;
 	private $time;
 	private $to;
+	private $secondsAgo;
 
 	/**
 	 * Constructs a new message.
@@ -174,17 +175,18 @@ class Message {
 		if(isset($msgData["parts"]) && isset($msgData["parts"][1]) && isset($msgData["parts"][1]["body"])) {
 			$this->body = $msgData["parts"][1]["body"];
 		}
-		$this->fromEmail = $msgData["fromfull"];
-		$this->fromName = $msgData["from"];
+		$this->fromEmail = isset($msgData["fromEmail"]) ? $msgData["fromEmail"] : null;
+		$this->fromName = isset($msgData["from"]) ? $msgData["from"] : null; ;
 		if(isset($msgData["headers"])) {
 			$this->headers = $msgData["headers"];
 		}
 		$this->id = $msgData["id"];
 		$this->ip = $msgData["ip"];
-		$this->read = $msgData["been_read"];
+		$this->read = isset($msgData["been_read"]) ? $msgData["been_read"] : null;
 		$this->subject = $msgData["subject"];
 		$this->time = $msgData["time"];
 		$this->to = $msgData["to"];
+		$this->secondsAgo = $msgData["seconds_ago"];
 	}
 
 	/**
@@ -276,5 +278,14 @@ class Message {
 	 */
 	public function to() {
 		return $this->to;
+	}
+
+	/**
+	 * Returns the time this message was sent.
+	 *
+	 * @return int The time this message was sent, in seconds.
+	 */
+	public function secondsAgo(){
+	    return $this->secondsAgo;
 	}
 }
