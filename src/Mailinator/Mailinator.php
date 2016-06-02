@@ -157,6 +157,7 @@ class Message {
 	private $body;
 	private $fromEmail;
 	private $fromName;
+	private $origFrom;
 	private $headers = array();
 	private $id;
 	private $ip;
@@ -174,14 +175,24 @@ class Message {
 		if(isset($msgData["parts"]) && isset($msgData["parts"][1]) && isset($msgData["parts"][1]["body"])) {
 			$this->body = $msgData["parts"][1]["body"];
 		}
-		$this->fromEmail = $msgData["fromfull"];
-		$this->fromName = $msgData["from"];
+		if(isset($msgData["fromfull"])) {
+			$this->fromEmail = $msgData["fromfull"];
+		}
+		if(isset($msgData["from"])) {
+			$this->fromName = $msgData["from"];
+		}
+		if(isset($msgData["origfrom"])) {
+			$this->origFrom = $msgData["origfrom"];
+		}
 		if(isset($msgData["headers"])) {
 			$this->headers = $msgData["headers"];
 		}
+		if(isset($msgData["been_read"])) {
+			$this->read = $msgData["been_read"];
+		}
+
 		$this->id = $msgData["id"];
 		$this->ip = $msgData["ip"];
-		$this->read = $msgData["been_read"];
 		$this->subject = $msgData["subject"];
 		$this->time = $msgData["time"];
 		$this->to = $msgData["to"];
@@ -195,6 +206,15 @@ class Message {
 	 */
 	public function body() {
 		return $this->body;
+	}
+
+	/**
+	 * The sender's full email. 'FirstName LastName <firstname.lastname@testemail.com>'
+	 *
+	 * @return string
+	 */
+	public function origFrom() {
+		return $this->origFrom;
 	}
 
 	/**
