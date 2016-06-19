@@ -172,8 +172,8 @@ class Message {
 	 * @param array $returnData The data received from a call to the Mailinator API
 	 */
 	public function __construct($msgData) {
-		if(isset($msgData["parts"]) && isset($msgData["parts"][1]) && isset($msgData["parts"][1]["body"])) {
-			$this->body = $msgData["parts"][1]["body"];
+		if(isset($msgData["parts"]) && isset($msgData["parts"][0]) && isset($msgData["parts"][0]["body"])) {
+			$this->body = $msgData["parts"][0]["body"];
 		}
 		$this->fromEmail = isset($msgData["fromEmail"]) ? $msgData["fromEmail"] : null;
 		$this->fromName = isset($msgData["from"]) ? $msgData["from"] : null; ;
