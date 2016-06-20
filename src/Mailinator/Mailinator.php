@@ -176,7 +176,7 @@ class Message {
 			$this->body = $msgData["parts"][0]["body"];
 		}
 		$this->fromEmail = isset($msgData["fromEmail"]) ? $msgData["fromEmail"] : null;
-		$this->fromName = isset($msgData["from"]) ? $msgData["from"] : null; ;
+		$this->fromName = isset($msgData["from"]) ? $msgData["from"] : null;
 		if(isset($msgData["headers"])) {
 			$this->headers = $msgData["headers"];
 		}
