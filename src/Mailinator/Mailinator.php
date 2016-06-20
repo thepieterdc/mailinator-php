@@ -181,7 +181,7 @@ class Message {
 			$this->headers = $msgData["headers"];
 		}
 		$this->id = $msgData["id"];
-		$this->ip = $msgData["ip"];
+		$this->ip = isset($msgData["ip"]) ? $msgData["ip"] : null;
 		$this->read = isset($msgData["been_read"]) ? $msgData["been_read"] : null;
 		$this->subject = $msgData["subject"];
 		$this->time = $msgData["time"];
