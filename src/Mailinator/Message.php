@@ -9,7 +9,8 @@ namespace Mailinator;
  * @since 2015-09-26
  * @author	Pieter De Clercq <pieterdeclercq@outlook.com>
  */
-class Message {
+class Message
+{
     private $body;
     private $fromEmail;
     private $fromName;
@@ -27,13 +28,14 @@ class Message {
      *
      * @param array $returnData The data received from a call to the Mailinator API
      */
-    public function __construct($msgData) {
-        if(isset($msgData["parts"]) && isset($msgData["parts"][0]) && isset($msgData["parts"][0]["body"])) {
+    public function __construct($msgData)
+    {
+        if (isset($msgData["parts"]) && isset($msgData["parts"][0]) && isset($msgData["parts"][0]["body"])) {
             $this->body = $msgData["parts"][0]["body"];
         }
         $this->fromEmail = isset($msgData["fromEmail"]) ? $msgData["fromEmail"] : null;
         $this->fromName = isset($msgData["from"]) ? $msgData["from"] : null;
-        if(isset($msgData["headers"])) {
+        if (isset($msgData["headers"])) {
             $this->headers = $msgData["headers"];
         }
         $this->id = $msgData["id"];
@@ -51,7 +53,8 @@ class Message {
      *
      * @return string The message contents
      */
-    public function body() {
+    public function body()
+    {
         return $this->body;
     }
 
@@ -60,7 +63,8 @@ class Message {
      *
      * @return string The sender's email
      */
-    public function fromEmail() {
+    public function fromEmail()
+    {
         return $this->fromEmail;
     }
 
@@ -69,7 +73,8 @@ class Message {
      *
      * @return string The sender's name
      */
-    public function fromName() {
+    public function fromName()
+    {
         return $this->fromName;
     }
     /**
@@ -78,7 +83,8 @@ class Message {
      *
      * @return array The message headers
      */
-    public function headers() {
+    public function headers()
+    {
         return $this->headers;
     }
 
@@ -87,7 +93,8 @@ class Message {
      *
      * @return int The message id
      */
-    public function id() {
+    public function id()
+    {
         return $this->id;
     }
 
@@ -96,7 +103,8 @@ class Message {
      *
      * @return string The mailserver's IP address
      */
-    public function ip() {
+    public function ip()
+    {
         return $this->ip;
     }
 
@@ -105,7 +113,8 @@ class Message {
      *
      * @return bool true if this message has been read
      */
-    public function read() {
+    public function read()
+    {
         return $this->read;
     }
 
@@ -114,7 +123,8 @@ class Message {
      *
      * @return string The subject of this message
      */
-    public function subject() {
+    public function subject()
+    {
         return $this->subject;
     }
 
@@ -123,7 +133,8 @@ class Message {
      *
      * @return int The time this message was sent, in seconds since 01/01/1970
      */
-    public function time() {
+    public function time()
+    {
         return $this->time;
     }
 
@@ -132,7 +143,8 @@ class Message {
      *
      * @return string The name of the receiver of this message
      */
-    public function to() {
+    public function to()
+    {
         return $this->to;
     }
 
@@ -141,7 +153,8 @@ class Message {
      *
      * @return int The time this message was sent, in seconds.
      */
-    public function secondsAgo(){
+    public function secondsAgo()
+    {
         return $this->secondsAgo;
     }
 }

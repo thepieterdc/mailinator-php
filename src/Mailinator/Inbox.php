@@ -9,8 +9,8 @@ namespace Mailinator;
  * @since 2015-09-26
  * @author	Pieter De Clercq <pieterdeclercq@outlook.com>
  */
-class Inbox {
-
+class Inbox
+{
     private $messages = array();
 
     /**
@@ -20,7 +20,7 @@ class Inbox {
      */
     public function __construct($returnData)
     {
-        foreach($returnData as $message) {
+        foreach ($returnData as $message) {
             $this->messages[] = new Message($message);
         }
     }

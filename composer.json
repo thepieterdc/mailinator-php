@@ -16,9 +16,15 @@
     "require": {
       "php": ">=5.2.1"
     },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "@stable"
+    },
     "autoload": {
       "psr-0": {
         "Mailinator": "src/"
       }
+    },
+    "config": {
+        "optimize-autoloader": true
     }
 }
